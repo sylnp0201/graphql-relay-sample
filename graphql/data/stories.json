@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "slug": "2017-03-10/the-electric-car-rush-started-too-early",
+    "url": "https://www.bloomberg.com/view/articles/2017-03-10/the-electric-car-rush-started-too-early",
+    "headline": "Park's Ouster Lets South Korea Move On",
+    "credits": [
+      { "id": "1" }
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "2017-03-10/this-bull-market-isn-t-as-old-as-some-seem-to-think",
+    "url": "https://www.bloomberg.com/view/articles/2017-03-10/this-bull-market-isn-t-as-old-as-some-seem-to-think",
+    "headline": "The G-20 Is a (Slightly Dysfunctional) Family",
+    "credits": [
+      { "id": "2" }
+    ]
+  },
+  {
+    "id": "3",
+    "slug": "2017-03-10/a-multispeed-europe-will-be-hard-to-pull-off",
+    "url": "https://www.bloomberg.com/view/articles/2017-03-10/a-multispeed-europe-will-be-hard-to-pull-off",
+    "headline": "The Electric Car Rush Started Too Early",
+    "credits": [
+      { "id": "1" }
+    ]
+  },
+  {
+    "id": "4",
+    "slug": "2017-03-10/the-remarkable-steadiness-of-federal-employment",
+    "url": "https://www.bloomberg.com/view/articles/2017-03-10/the-remarkable-steadiness-of-federal-employment",
+    "headline": "This Bull Market Isn't as Old as Some Seem to Think",
+    "credits": [
+      { "id": "3" }
+    ]
+  }
+]

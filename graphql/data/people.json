@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Leonid Bershidsky",
+    "summary": "Leonid Bershidsky is a Bloomberg View columnist. He was the founding editor of the Russian business daily Vedomosti and founded the opinion website Slon.ru. ",
+    "thumbnail": {
+      "url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKuyxeeUo9Ns/v0/-1x-1.png"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Barry Ritholtz",
+    "summary": "Barry Ritholtz is a Bloomberg View columnist. He founded Ritholtz Wealth Management and was chief executive and director of equity research at FusionIQ, a quantitative research firm. He blogs at the Big Picture and is the author of “Bailout Nation: How Greed and Easy Money Corrupted Wall Street and Shook the World Economy.”",
+    "thumbnail": {
+      "url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iJwSHq7Dz7HY/v0/-1x-1.png"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Justin Fox",
+    "summary": "",
+    "thumbnail": {
+      "url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iJ4ToC0A_0zA/v0/-1x-1.png"
+    }
+  }
+]

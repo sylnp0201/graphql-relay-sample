@@ -1,0 +1,31 @@
+{
+  "name": "graphql-relay-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "graphql": "NODE_PATH=graphql babel-watch graphql/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sylnp0201/graphql-relay-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sylnp0201/graphql-relay-sample/issues"
+  },
+  "homepage": "https://github.com/sylnp0201/graphql-relay-sample#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-graphql": "^0.6.3",
+    "graphql": "^0.9.1",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-watch": "^2.0.6"
+  }
+}
