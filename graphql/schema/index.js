@@ -1,7 +1,7 @@
 import { buildSchema } from 'graphql';
 
-import story from './story';
-import person from './person';
+import * as story from './story';
+import * as person from './person';
 
 export default buildSchema(`
   type Query {

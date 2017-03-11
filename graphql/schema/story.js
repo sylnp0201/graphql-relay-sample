@@ -1,14 +1,7 @@
-import { find, search } from 'store/story';
-import { find as findPerson } from 'store/person';
-
-class Story {
-  constructor({ id: storyId, attrs }) {
-    if (!storyId && !attrs) {
-      throw new Error('Invalid args for Story constructor!');
-    }
-
-    this.data = storyId ? find(storyId) : attrs;
-    const { id, slug, url, headline } = this.data;
+export class Story {
+  constructor(props) {
+    this.props = props;
+    const { id, slug, url, headline } = this.props;
 
     this.id = id;
     this.slug = slug;
@@ -16,8 +9,8 @@ class Story {
     this.headline = headline;
   }
 
-  credits() {
-    return this.data.credits.map(item => findPerson(item.id));
+  credits(args, Store) {
+    return this.props.credits.map(c => Store.Person.find(c.id));
   }
 }
 
@@ -35,16 +28,10 @@ export const query = `
   stories(id: ID): [Story]
 `;
 
-export function resolve ({ id }) {
+export function resolve ({ id }, Store) {
   if (id) {
-    return [ new Story({ id }) ];
+    return [Store.Story.find(id)];
   }
 
-  return search().map(item => new Story({ attrs: item }));
-};
-
-export default {
-  type,
-  query,
-  resolve,
+  return Store.Story.search();
 };
