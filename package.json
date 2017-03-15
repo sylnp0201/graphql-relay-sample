@@ -2,10 +2,13 @@
   "name": "graphql-relay-sample",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "graphql": "NODE_PATH=graphql babel-watch graphql/server.js"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "NODE_PATH=api port=4010 babel-watch server.js",
+    "client": "webpack-dev-server --port 4000",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,11 +24,18 @@
     "express": "^4.15.2",
     "express-graphql": "^0.6.3",
     "graphql": "^0.9.1",
-    "morgan": "^1.8.1"
+    "morgan": "^1.8.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-relay": "^0.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
-    "babel-preset-env": "^1.2.1",
-    "babel-watch": "^2.0.6"
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-env": "^1.2.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
