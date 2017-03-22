@@ -1,52 +1,58 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Relay from 'react-relay';
+// import Relay from 'react-relay';
+
+import { ApolloProvider, ApolloClient, createNetworkInterface, gql, graphql } from 'react-apollo';
+
+const btoa = (str) => {
+  const buffer = new Buffer(str, 'binary');
+  return buffer.toString('base64');
+};
+
+const networkInterface = createNetworkInterface({
+  uri: 'http://localhost:1227',
+});
+
+const USERNAME = 'editdash';
+const PASSWORD = 'edit!@lQ1#5N1';
+
+networkInterface.use([{
+  applyMiddleware(req, next) {
+    if (!req.options.headers) {
+      req.options.headers = {};  // Create the header object if needed.
+    }
+    req.options.headers.authorization = `Basic ZWRpdGRhc2g6ZWRpdCFAbFExIzVOMQ==`;
+    next();
+  }
+}]);
+
+const client = new ApolloClient({
+  networkInterface,
+});
 
 class Story extends React.Component {
   render() {
-    const { story } = this.props;
+    const { story, data } = this.props;
 
-    return <div>{story.url}</div>;
+    console.log('>>>', data);
+
+    return <div>hello</div>;
   }
 }
 
-const StoryContainer = Relay.createContainer(Story, {
-  fragments: {
-    stories: () => Relay.QL`
-      fragment on Story {
-        url
-        headline
-      }
-    `
+const StoryContainer = graphql(gql`
+  query {
+    stories(site: VIEW, limit: 4) {
+      id
+      url
+      headline
+    }
   }
-});
-
-const storyRoute = {
-  queries: {
-    // Routes declare queries using functions that return a query root. Relay
-    // will automatically compose the `user` fragment from the Relay container
-    // paired with this route on a Relay.RootContainer
-    stories: () => Relay.QL`
-      # In Relay, the GraphQL query name can be optionally omitted.
-      query { stories(id: $storyID) }
-    `,
-  },
-  params: {
-    // This `userID` parameter will populate the `$userID` variable above.
-    storyID: '1',
-  },
-  // Routes must also define a string name.
-  name: 'storyRoute',
-};
-
-const story = {
-  url: "https://www.google.com"
-};
+`)(Story);
 
 ReactDOM.render(
-  <Relay.RootContainer
-    Component={StoryContainer}
-    route={storyRoute}
-  />,
-  document.querySelector('#app')
+  <ApolloProvider client={client}>
+    <StoryContainer/>
+  </ApolloProvider>,
+  document.getElementById('app'),
 );

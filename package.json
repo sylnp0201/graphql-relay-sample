@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/sylnp0201/graphql-relay-sample#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-graphql": "^0.6.3",
     "graphql": "^0.9.1",
     "morgan": "^1.8.1",
     "react": "^15.4.2",
+    "react-apollo": "^1.0.0-rc.3",
     "react-dom": "^15.4.2",
     "react-relay": "^0.10.0"
   },
